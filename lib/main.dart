@@ -1,3 +1,4 @@
+import 'package:deli_meals/categories_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,9 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('DeliMeals'),
       ),
-      body: Center(
-        child: Text('Navigation Time!'),
-      ),
+      body: CategoriesScreen(),
     );
   }
 }
