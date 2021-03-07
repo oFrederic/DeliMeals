@@ -1,6 +1,8 @@
-import 'package:deli_meals/screens/favorites_screen.dart';
 import 'package:flutter/material.dart';
-import 'categories_screen.dart';
+
+import './favorites_screen.dart';
+import '../widgets/main_drawer.dart';
+import './categories_screen.dart';
 
 class TabsUpScreen extends StatelessWidget {
   @override
@@ -21,6 +23,7 @@ class TabsUpScreen extends StatelessWidget {
             ],
           ),
         ),
+        drawer: MainDrawer(),
         body: TabBarView(
           children: [
             CategoriesScreen(),
