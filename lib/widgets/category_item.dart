@@ -1,4 +1,3 @@
-import 'package:deli_meals/screens/category_meals_screen.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -8,11 +7,14 @@ class CategoryItem extends StatelessWidget {
   final Color color;
 
   void selectCategory(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) => CategoryMealsScreen(id, title),
-      ),
-    );
+    // Navigator.of(context).push(
+    //   MaterialPageRoute(
+    //     builder: (_) => CategoryMealsScreen(id, title),
+    //   ),
+    // );
+
+    Navigator.of(context)
+        .pushNamed('/category-meals', arguments: {'id': id, 'title': title});
   }
 
   @override
