@@ -1,8 +1,12 @@
+import '../models/meal.dart';
 import 'package:deli_meals/screens/favorites_screen.dart';
 import 'package:flutter/material.dart';
 import 'categories_screen.dart';
 
 class TabsBottomScreen extends StatelessWidget {
+  TabsBottomScreen(this.favoriteMeals);
+  final List<Meal> favoriteMeals;
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -12,7 +16,10 @@ class TabsBottomScreen extends StatelessWidget {
           title: const Text("Meals"),
         ),
         body: TabBarView(
-          children: <Widget>[CategoriesScreen(), FavoritesScreen()],
+          children: <Widget>[
+            CategoriesScreen(),
+            FavoritesScreen(favoriteMeals)
+          ],
         ),
         bottomNavigationBar: Container(
           color: Theme.of(context).primaryColor,
