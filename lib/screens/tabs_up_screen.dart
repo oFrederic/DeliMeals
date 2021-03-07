@@ -1,13 +1,8 @@
 import 'package:deli_meals/screens/favorites_screen.dart';
 import 'package:flutter/material.dart';
-import './categories_screen.dart';
+import 'categories_screen.dart';
 
-class TabsScreen extends StatefulWidget {
-  @override
-  _TabsScreenState createState() => _TabsScreenState();
-}
-
-class _TabsScreenState extends State<TabsScreen> {
+class TabsUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -21,14 +16,8 @@ class _TabsScreenState extends State<TabsScreen> {
           ),
           bottom: TabBar(
             tabs: [
-              Tab(
-                //icon: Icon(Icons.category),
-                text: 'Categories',
-              ),
-              Tab(
-                //icon: Icon(Icons.star),
-                text: 'Favorites',
-              ),
+              Tab(text: 'Categories'),
+              Tab(text: 'Favorites'),
             ],
           ),
         ),
