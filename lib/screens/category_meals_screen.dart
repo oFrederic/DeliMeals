@@ -1,4 +1,7 @@
+import 'package:deli_meals/widgets/meal_item.dart';
 import 'package:flutter/material.dart';
+
+import '../data/dummy_data.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
   static const routeName = '/category-meals';
@@ -12,6 +15,8 @@ class CategoryMealsScreen extends StatelessWidget {
         ModalRoute.of(context).settings.arguments as Map<String, String>;
     final id = routeArgs['id'];
     final title = routeArgs['title'];
+    final meals =
+        DUMMY_MEALS.where((meal) => meal.categories.contains(id)).toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -20,8 +25,16 @@ class CategoryMealsScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.headline6,
         ),
       ),
-      body: Center(
-        child: Text('The Recipes for The Category!'),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return MealItem(
+              title: meals[index].title,
+              imageUrl: meals[index].imageUrl,
+              duration: meals[index].duration,
+              complexity: meals[index].complexity,
+              affordability: meals[index].affordability);
+        },
+        itemCount: meals.length,
       ),
     );
   }
